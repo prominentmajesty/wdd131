@@ -1,0 +1,165 @@
+/* :root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --background-color: #f9f9f9;
+} */
+
+body {
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header-caption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(17, 39, 59);
+    gap: 0.3rem;
+}
+
+.Header-caption-text {
+    color: white;
+}
+
+.caption-author {
+    color: rgb(247, 206, 23);
+}
+
+.nav-links {
+    width: 100%;
+    height: 8vh;
+    background-color: rgb(36, 34, 34);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-links a:hover {
+    color: rgba(247, 195, 23, 0.699);
+}
+
+.grid-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    padding: 0px 0px 20px 0px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.intro-caption {
+    width: 100%;
+    height: 7vh;
+    background-color: rgb(17, 39, 59);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.personal-and-byu-intro-container {
+    padding: 2rem;
+}
+
+.personal-intro {
+    display: flex;
+    gap: 1.7rem;
+}
+
+.write-up-and-hr {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.h-rule-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    justify-content: center;
+}
+
+.h-rule-container h2 {
+    text-align: center;
+}
+
+.h-rule {
+    width: 96%;
+    text-align: center;
+}
+
+.company-intro {
+    display: flex;
+    gap: 0.5rem;
+    padding-top: 1rem;
+}
+
+.empty-div {
+    width: 100%;
+}
+
+.byu-image-container h5 {
+    text-align: center;
+}
+
+.second-card-heading {
+    width: 100%;
+    height: 7vh;
+    background-color: rgb(17, 39, 59);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+.web-dev-resource-container {
+    width: 100%;
+    height: 93vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    width: 100%;
+    height: 12vh;
+    background-color: rgb(17, 39, 59);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p {
+    color: white;
+}
+
+.footer h5 {
+    color: rgb(247, 206, 23);
+}
+
+
+/* Header End */
