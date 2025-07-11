@@ -38,7 +38,7 @@ const copyrightParagraph = document.querySelector('footer p:first-of-type');
 if (copyrightParagraph) {
     copyrightParagraph.innerHTML = `&copy; ${year_current} 🌺 Augustine Ugochukwu Odoemene 🌺 Nigeria`;
 }
-
+//
 // Get the last modified date.
 const lastModified = document.lastModified;
 const formattedDate = new Date(lastModified).toLocaleString();
