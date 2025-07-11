@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     hamburger.addEventListener('click', openNav);
     closeNav.addEventListener('click', closeNavigation);
-
+//
     // Hide nav and show hamburger on resize if desktop
     function handleResize() {
         if (window.innerWidth >= 900) {
