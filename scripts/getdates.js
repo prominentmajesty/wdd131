@@ -1,5 +1,6 @@
 
 // Find the first paragraph in the footer and update it with the copyright year
+document.getElementById("course-title").textContent = "WDD 131: Dynamic Web Fundamentals";
 const currentYear = new Date().getFullYear();
 const copyrightParagraph = document.querySelector('footer p:first-of-type');
 if (copyrightParagraph) {
