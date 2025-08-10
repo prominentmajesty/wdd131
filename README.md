@@ -7,3 +7,5 @@ https://cloudconvert.com/jpg-to-webp
 
 // URL to resize WEBP image file
 https://squoosh.app/
+
+

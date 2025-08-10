@@ -1,0 +1,40 @@
+body {
+    font-size: 1.1rem;
+}
+
+header {
+    padding: 2rem 0;
+}
+
+.header-content {
+    max-width: 1200px;
+    padding: 0 2rem;
+}
+
+.site-title {
+    font-size: 2.2rem;
+}
+
+.nav ul {
+    gap: 3rem;
+}
+
+.nav a {
+    font-size: 1.15rem;
+    padding: 0.7rem 2rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+footer {
+    font-size: 1.1rem;
+}
