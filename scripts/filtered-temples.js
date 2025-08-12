@@ -83,14 +83,21 @@ const temples = [
     // Add more temple objects here...
 ];
 
-document.addEventListener('DOMContentLoaded', function () {
-    const grid = document.querySelector('.album-grid');
-    if (!grid) return;
-    temples.forEach(temple => {
-        const card = document.createElement('div');
-        card.className = 'temple-card';
+function getArea(temple) {
+    return typeof temple.area === "string" ? parseInt(temple.area.replace(/,/g, "")) : temple.area;
+}
 
-        card.innerHTML = `
+
+function getYear(temple) {
+    const match = temple.dedicated.match(/^(\d{4})/) || temple.dedicated.match(/(\d{4})$/);
+    return match ? parseInt(match[1]) : 0;
+}
+
+function createCard(temple) {
+    const card = document.createElement('div');
+    card.className = 'temple-card';
+
+    card.innerHTML = `
             <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
             <div class="temple-info">
                 <h3>${temple.templeName}</h3>
@@ -99,40 +106,67 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p><strong>Area:</strong> ${temple.area} m²</p>
             </div>
         `;
-        grid.appendChild(card);
-    });
-});
-
-function getArea(temple) {
-    return typeof temple.area === "string" ? parseInt(temple.area.replace(/,/g, "")) : temple.area;
+    return card;
 }
 
-// Helper to get year from dedicated string
-function getYear(temple) {
-    // Handles both "YYYY, Month, DD" and "DD Month YYYY"
-    const match = temple.dedicated.match(/^(\d{4})/) || temple.dedicated.match(/(\d{4})$/);
-    return match ? parseInt(match[1]) : 0;
-}
-
+var grid = document.querySelector('.album-grid');
 document.addEventListener('DOMContentLoaded', function () {
-    renderTemples(temples);
+    if (!grid) return;
+    temples.forEach(temple => {
+        grid.appendChild(createCard(temple));
+    });
 
-    // Add event listeners to nav menu
     document.querySelectorAll('nav a').forEach(link => {
         link.addEventListener('click', function (e) {
+
             e.preventDefault();
-            const filter = this.textContent.trim().toLowerCase();
+            const filter = this.textContent.trim();
             let filtered = temples;
+
             if (filter === "Old") {
                 filtered = temples.filter(t => getYear(t) < 1900);
+                grid.innerHTML = '';
+                filtered.map(t => grid.appendChild(createCard(t)));
+
             } else if (filter === "New") {
                 filtered = temples.filter(t => getYear(t) > 2000);
+                console.log("New Temples:", filtered);
+                grid.innerHTML = '';
+                filtered.map(t => grid.appendChild(createCard(t)));
+
             } else if (filter === "Large") {
                 filtered = temples.filter(t => getArea(t) > 90000);
+                grid.innerHTML = '';
+                filtered.map(t => grid.appendChild(createCard(t)));
+
             } else if (filter === "Small") {
                 filtered = temples.filter(t => getArea(t) < 10000);
-            } // "home" or anything else shows all
-            renderTemples(filtered);
+                grid.innerHTML = '';
+                filtered.map(t => grid.appendChild(createCard(t)));
+
+            } else {
+                filtered = temples; // Reset to all temples
+                grid.innerHTML = '';
+                filtered.map(t => grid.appendChild(createCard(t)));
+            }
+            // grid.innerHTML = '';
+            // temples.forEach(t => {
+            //     grid.appendChild(createCard(t));
+            // });
         });
     });
 });
+
+const year_current = new Date().getFullYear();
+const copyrightParagraph = document.querySelector('footer p:first-of-type');
+if (copyrightParagraph) {
+    copyrightParagraph.innerHTML = `&copy; ${year_current} 🌺 Augustine Ugochukwu Odoemene 🌺 Nigeria`;
+}
+
+const lastModified = document.lastModified;
+const formattedDate = new Date(lastModified).toLocaleString();
+
+const lastModifiedParagraph = document.querySelector('footer h5:first-of-type');
+if (lastModifiedParagraph) {
+    lastModifiedParagraph.textContent = `Last Modified: ${formattedDate}`;
+}
