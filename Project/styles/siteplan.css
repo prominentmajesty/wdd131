@@ -1,0 +1,146 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+    --primary-green: #388E3C;
+    --secondary-gray: #F5F5F5;
+    --accent-orange: #FFA726;
+    --heading-font: 'Montserrat', Arial, sans-serif;
+    --body-font: 'Open Sans', Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    background: var(--secondary-gray);
+    color: #222;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background: var(--primary-green);
+    color: #fff;
+    padding: 2rem 1rem 1rem 1rem;
+    text-align: center;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    color: var(--accent-orange);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(56, 142, 60, 0.08);
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2.5rem;
+}
+
+h1,
+h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    border-left: 6px solid var(--accent-orange);
+    padding-left: 0.5rem;
+    font-size: 1.5rem;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+.color-samples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.color-block {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    min-width: 220px;
+    box-shadow: 0 1px 4px rgba(56, 142, 60, 0.07);
+}
+
+.color-block.primary {
+    background: var(--primary-green);
+    color: #fff;
+}
+
+.color-block.secondary {
+    background: var(--secondary-gray);
+    color: #222;
+    border: 1px solid #ccc;
+}
+
+.color-block.accent {
+    background: var(--accent-orange);
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: var(--primary-green);
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 2rem;
+    border-radius: 0 0 12px 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    main {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .logo-title {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .color-samples {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+}
