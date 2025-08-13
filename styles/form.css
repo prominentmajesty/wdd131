@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+    --primary: #388E3C;
+    --secondary: #F5F5F5;
+    --accent: #FFA726;
+    --danger: #d32f2f;
+    --heading-font: 'Montserrat', Arial, sans-serif;
+    --body-font: 'Open Sans', Arial, sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    background: var(--secondary);
+    margin: 0;
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+form {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(56, 142, 60, 0.10);
+    max-width: 480px;
+    width: 100%;
+    padding: 2rem 2.5rem 1.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+h1 {
+    font-family: var(--heading-font);
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-weight: 600;
+    color: var(--primary);
+    font-family: var(--heading-font);
+    margin-bottom: 0.2rem;
+}
+
+.required {
+    color: var(--danger);
+    font-size: 1.1em;
+    margin-left: 0.2em;
+}
+
+select,
+input[type="date"],
+input[type="text"],
+textarea {
+    font-family: var(--body-font);
+    font-size: 1rem;
+    padding: 0.6em 0.8em;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    background: var(--secondary);
+    transition: border 0.2s;
+}
+
+select:focus,
+input[type="date"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+    border: 1.5px solid var(--primary);
+    outline: none;
+}
+
+.rating-group {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.rating-group input[type="radio"] {
+    display: none;
+}
+
+.rating-group label {
+    color: #bbb;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 0.2em 0.5em;
+    border-radius: 4px;
+    background: #f7f7f7;
+    transition: background 0.2s, color 0.2s;
+    border: 1px solid transparent;
+}
+
+.rating-group input[type="radio"]:checked+label,
+.rating-group label:hover,
+.rating-group label:focus {
+    color: var(--accent);
+    background: #fffbe7;
+    border: 1px solid var(--accent);
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem 1.2rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    accent-color: var(--primary);
+    margin-right: 0.3em;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+    max-height: 200px;
+}
+
+input[type="submit"] {
+    background: var(--primary);
+    color: #fff;
+    font-family: var(--heading-font);
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    padding: 0.8em 0;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.2s;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+    background: var(--accent);
+    color: #222;
+}
+
+footer {
+    background: var(--primary);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    margin-top: auto;
+    border-radius: 0 0 16px 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    form {
+        padding: 1.2rem 0.7rem 1rem 0.7rem;
+        max-width: 98vw;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    main {
+        padding: 0.5rem;
+    }
+
+    .checkbox-group {
+        gap: 0.5rem 0.7rem;
+    }
+}
